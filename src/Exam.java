@@ -16,6 +16,10 @@ public class Exam {
 	public void setResult(double result) {
 		this.result = result;
 	}
+	@Override
+	public String toString() {
+		return "Exam [student=" + student + ", result=" + result + "]";
+	}
 	
 	
 	

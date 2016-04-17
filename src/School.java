@@ -153,8 +153,10 @@ public class School {
 			for (Student s: course.getStudents()) {
 				System.out.println("Students : "+s.toString());
 			}
-			
+			for (Exam e : course.getExams()) {
+				System.out.println(e.toString());
 			}
-			
 		}
+			
 	}
+}

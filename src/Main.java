@@ -14,7 +14,8 @@ public class Main {
 		histoire.setProf(p);
 		histoire.addExam(ex);
 		histoire.addStudent(st);
-		
+		ex.setStudent(st);
+		ex.setResult(60);
 		school.printState();
 		
 		
