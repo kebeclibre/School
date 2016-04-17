@@ -37,5 +37,24 @@ public class Course {
 	public void setName(String name) {
 		this.name = name;
 	}
+
+	public Prof getProf() {
+		return prof;
+	}
+
+	public void setProf(Prof prof) {
+		this.prof = prof;
+	}
+	
+	public int globalMean() {
+		int result=0;
+		for (Exam exam : this.exams)  {
+			result += exam.getResult();
+		}
+		return result/this.exams.size();
+	}
+
+	
+	
 	
 }
