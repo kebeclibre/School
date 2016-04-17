@@ -46,15 +46,19 @@ public class School {
 		}
 		return examOneStudent;
 	}
+	public List<Course> getAllCourses() {
+		return this.courses;
+	}
+	
 	// x got more than 50% average on all exams
 	public boolean getMoreThan50(Student x){
-		Set<Exam> exams50 = new HashSet<Exam>();
+		int count=0;
 		for (Exam exam : getAllExams(x)) {
 			if (exam.getResult() >= 50) {
-				exams50.add(exam);
+				count += 1;
 			}
 		}
-		return  (exams50.size() == getAllExams(x).size());
+		return  (count == getAllExams(x).size());
 	}
 	public Student getBestStudent(){
 		Student best = null;
@@ -136,5 +140,21 @@ public class School {
 	public void addCourse(Course course) {
 		courses.add(course);
 	}
-
-}
+	
+	public void printState() {
+		for (Course course : getAllCourses()) {
+			System.out.println(course.toString());
+			
+			if (course.getProf() == null) {
+					System.out.println("noprof");
+				}else{
+					System.out.println(course.getProf().toString());
+			}
+			for (Student s: course.getStudents()) {
+				System.out.println("Students : "+s.toString());
+			}
+			
+			}
+			
+		}
+	}

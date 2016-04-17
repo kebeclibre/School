@@ -1,6 +1,6 @@
 import java.util.Date;
 
-public class Person {
+abstract class Person implements Comparable<Person>{
 
 	private String lastname;
 	private String firstname;
@@ -68,6 +68,14 @@ public class Person {
 		} else if (!lastname.equals(other.lastname))
 			return false;
 		return true;
+	}
+	
+	public int compareTo(Person p) {
+		return this.hashCode()-p.hashCode();
+	}
+	@Override
+	public String toString() {
+		return "Person [lastname=" + lastname + ", firstname=" + firstname + ", birthdate=" + birthdate + "]";
 	}
 	
 	

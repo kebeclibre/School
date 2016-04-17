@@ -1,6 +1,7 @@
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Set;
+import java.util.TreeSet;
 
 public class Course {
 
@@ -12,6 +13,12 @@ public class Course {
 	public Course(String name){
 		this.name = name;
 		this.exams = new ArrayList<Exam>();
+		this.students = new TreeSet<Student>();
+	}
+
+	@Override
+	public String toString() {
+		return "Course [name=" + name + "]";
 	}
 
 	public void addExam(Exam exam) {

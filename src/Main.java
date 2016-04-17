@@ -6,12 +6,16 @@ public class Main {
 		Student st = new Student("Ducobu", "Christoph");
 		Prof p = new Prof("Crepin", "Dany");
 		Course histoire = new Course("Histoire");
+		Course math = new Course("Math");
 		Exam ex = new Exam();
 		
 		school.addCourse(histoire);
+		school.addCourse(math);
 		histoire.setProf(p);
 		histoire.addExam(ex);
 		histoire.addStudent(st);
+		
+		school.printState();
 		
 		
 		
