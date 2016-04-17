@@ -7,6 +7,14 @@ public class Main {
 		Prof p = new Prof("Crepin", "Dany");
 		Course histoire = new Course("Histoire");
 		Exam ex = new Exam();
+		
+		school.addCourse(histoire);
+		histoire.setProf(p);
+		histoire.addExam(ex);
+		histoire.addStudent(st);
+		
+		
+		
 	}
 
 }

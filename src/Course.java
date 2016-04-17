@@ -14,6 +14,14 @@ public class Course {
 		this.exams = new ArrayList<Exam>();
 	}
 
+	public void addExam(Exam exam) {
+		exams.add(exam);
+	}
+	
+	public void addStudent(Student s) {
+		students.add(s);
+	}
+	
 	public List<Exam> getExams() {
 		return exams;
 	}

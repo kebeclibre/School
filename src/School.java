@@ -133,4 +133,8 @@ public class School {
 		}
 		return result/getAllExams(x).size();
 	}
+	public void addCourse(Course course) {
+		courses.add(course);
+	}
+
 }
