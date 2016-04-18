@@ -71,8 +71,16 @@ abstract class Person implements Comparable<Person>{
 	}
 	
 	public int compareTo(Person p) {
-		return this.hashCode()-p.hashCode();
+		if ( 0 != this.getLastname().compareTo(p.getLastname())) {
+			return this.getLastname().compareTo(p.getLastname());
+		} else if (0 != this.getFirstname().compareTo(p.getFirstname())) {
+			return this.getFirstname().compareTo(p.getFirstname());
+		} else {
+			return this.getBirthdate().compareTo(p.getBirthdate());
+		} 
 	}
+	
+	
 	@Override
 	public String toString() {
 		return "Person [lastname=" + lastname + ", firstname=" + firstname + ", birthdate=" + birthdate + "]";

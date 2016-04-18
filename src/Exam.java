@@ -1,5 +1,5 @@
 
-public class Exam {
+public class Exam implements Comparable<Exam>{
 
 	private Student student;
 	// resultat obtenu en %
@@ -19,6 +19,10 @@ public class Exam {
 	@Override
 	public String toString() {
 		return "Exam [student=" + student + ", result=" + result + "]";
+	}
+	@Override
+	public int compareTo(Exam o) {
+		return (int) o.getResult()*100 - (int) this.getResult()*100;
 	}
 	
 	

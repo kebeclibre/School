@@ -116,6 +116,7 @@ public class School {
 		Calendar cal = GregorianCalendar.getInstance();
 		
 		for (Person person : getAllProfs()) {		
+			// il faudrait test si il y a bien une date chez les personnes
 			cal.setTime(person.getBirthdate());
 			if (cal.get(Calendar.YEAR) == year) {
 				people.add(person);
