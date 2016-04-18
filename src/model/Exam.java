@@ -1,4 +1,4 @@
-
+package model;
 public class Exam implements Comparable<Exam>{
 
 	private Student student;

@@ -1,3 +1,5 @@
+package model;
+
 import java.util.Date;
 
 abstract class Person implements Comparable<Person>{
@@ -74,9 +76,9 @@ abstract class Person implements Comparable<Person>{
 		if (null != this.getBirthdate() && null != p.getBirthdate()){
 			return this.getBirthdate().compareTo(p.getBirthdate());
 		
-		} else if (null == this.getBirthdate()) { return -1; 
+		} else if (null == this.getBirthdate()) { return 1; 
 		
-		} else if (null == p.getBirthdate()) { return 1; 
+		} else if (null == p.getBirthdate()) { return -1; 
 		
 		} else if ( 0 == this.getLastname().compareTo(p.getLastname())) {
 			return this.getFirstname().compareTo(p.getFirstname());

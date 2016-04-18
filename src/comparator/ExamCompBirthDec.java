@@ -1,4 +1,7 @@
+package comparator;
+
 import java.util.Comparator;
+import model.Exam;
 
 public class ExamCompBirthDec implements Comparator<Exam> {
 
