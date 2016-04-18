@@ -72,7 +72,15 @@ public class School {
 		return best;	
 	}
 	public Student getBestStudent(Course c){
-		return null;
+		Student best = null;
+		double note = 0;
+		for ( Exam e : c.getExams()) {
+			if (e.getResult() > note) {
+				note = e.getResult();
+				best = e.getStudent();
+			}
+		}
+		return best;
 	}
 	public Student getBestExam(Course c){
 		Student best = null;
