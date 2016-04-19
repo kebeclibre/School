@@ -1,4 +1,5 @@
 
+import model.exceptionSchool.ExceptMath;
 import model.*;
 
 public class Main {
@@ -17,10 +18,15 @@ public class Main {
 		histoire.addExam(ex);
 		histoire.addStudent(st);
 		ex.setStudent(st);
-		ex.setResult(60);
+		// ex.setResult(60);
 		school.printState();
 		
 		
+		try {
+			math.manufactureExam(1560, "Eleve");
+		} catch (ExceptMath e) {
+			System.err.println("double blaireau"+e);
+		}
 		
 	}
 

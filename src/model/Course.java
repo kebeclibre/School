@@ -5,6 +5,9 @@ import java.util.List;
 import java.util.Set;
 import java.util.TreeSet;
 
+import model.exceptionSchool.ExceptIllegalNumber;
+import model.exceptionSchool.ExceptMath;
+
 public class Course {
 
 	private List<Exam> exams;
@@ -69,6 +72,18 @@ public class Course {
 			result += exam.getResult();
 		}
 		return result/this.exams.size();
+	}
+	
+	public void manufactureExam(double result, String... name) throws ExceptMath{
+		Exam exam=new Exam();
+		try{
+			exam.setResult(result);
+		} catch (ExceptIllegalNumber e) {
+			System.err.println("Blaireau ! "+e);
+			throw new ExceptMath(e);
+			
+			
+		}
 	}
 
 	

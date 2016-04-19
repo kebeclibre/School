@@ -1,5 +1,6 @@
 package model;
-public class Exam implements Comparable<Exam>{
+import model.exceptionSchool.ExceptIllegalNumber;
+public class Exam implements Comparable<Exam> {
 
 	private Student student;
 	// resultat obtenu en %
@@ -13,8 +14,11 @@ public class Exam implements Comparable<Exam>{
 	public double getResult() {
 		return result;
 	}
-	public void setResult(double result) {
-		this.result = result;
+	public void setResult(double result) throws ExceptIllegalNumber{
+		if (result < 0) {
+			throw new ExceptIllegalNumber();
+		} else if (result > 1500 ) { throw new ExceptIllegalNumber("nombre superieur à 1500"); } 
+		else {this.result = result; }
 	}
 	@Override
 	public String toString() {
