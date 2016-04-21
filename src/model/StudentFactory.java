@@ -38,7 +38,7 @@ public class StudentFactory {
 	}
 	
 	public List<Student> getFromConsole() {
-		System.out.println("Enter Names sep by space: ");
+		//System.out.print("Enter Names sep by space: ");
 		return readFrom(System.in);
 	
 	}
@@ -47,9 +47,13 @@ public class StudentFactory {
 		BufferedReader br = new BufferedReader(new InputStreamReader(in));
 		List<Student> result = new ArrayList<Student>();
 		try {
-			//String line = null;
-			for (String line = br.readLine(); line != null; line = br.readLine()) {
-			//while (null != (line = br.readLine()) )  {
+			String line = null;
+			//for (String line = br.readLine(); line != null; line = br.readLine()) {
+			while (null != (line = br.readLine()) && line.length() > 0)  {
+			//while (true) {
+				//if (br.ready()) {
+				//String response =  br.readLine();
+				//if (response == null) {break;}
 				String[] indiv = line.split(" ");
 				Student stud = new Student();
 				stud.setFirstname(indiv[0]);
@@ -60,9 +64,11 @@ public class StudentFactory {
 				}
 				stud.setLastname(last);
 				result.add(stud);
+				
 			}
-			br.close();
 			in.close();
+			br.close();
+			
 		} catch (FileNotFoundException e) {	e.printStackTrace();
 		} catch (IOException e) {e.printStackTrace(); }
 		return result;

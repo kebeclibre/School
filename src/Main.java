@@ -12,7 +12,7 @@ public class Main {
 		
 		System.out.println(sF.getSFromFile().toString());
 		
-		sF.getFromConsole();
+		System.out.println((sF.getFromConsole().toString()));
 		
 		
 		
