@@ -9,6 +9,10 @@ abstract class Person implements Comparable<Person>{
 	private Date birthdate;
 	
 	
+	public Person() {
+		
+	}
+	
 	public Person(String lastname, String firstname, Date birthdate) {
 		this.lastname = lastname;
 		this.firstname = firstname;

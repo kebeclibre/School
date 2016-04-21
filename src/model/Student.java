@@ -5,6 +5,10 @@ public class Student extends Person{
 		super(lastname, firstname);
 		
 	}
+	
+	public Student() {
+		super();
+	}
 
 	
 }
