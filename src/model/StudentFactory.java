@@ -56,9 +56,11 @@ public class StudentFactory {
 				
 				String last="";
 				for (byte i = 1; i < indiv.length; i++) {
-					last += indiv[i]+", ";
+					if (i == indiv.length - 1) {
+						last += indiv[i];
+					} else {last += indiv[i]+", "; }
 				}
-				last = last.substring(0, last.length()-2);
+				//last = last.substring(0, last.length()-2);
 				stud.setLastname(last);
 				result.add(stud);
 				
