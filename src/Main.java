@@ -10,9 +10,11 @@ public class Main {
 		
 		StudentFactory sF = StudentFactory.getInstance();
 		
-		System.out.println(sF.getSFromFile().toString());
+		//System.out.println(sF.getSFromFile().toString());
 		
-		System.out.println((sF.getFromConsole().toString()));
+		//System.out.println((sF.getFromConsole().toString()));
+		
+		sF.consoleToFile();
 		
 		
 		

@@ -1,23 +1,30 @@
 package model;
 
 import java.io.BufferedReader;
+import java.io.BufferedWriter;
+import java.io.File;
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
+import java.io.FileOutputStream;
 import java.io.IOException;
 import java.io.InputStream;
 import java.io.InputStreamReader;
+import java.io.OutputStreamWriter;
+import java.io.RandomAccessFile;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.StringTokenizer;
 
 public class StudentFactory {
 	
+	private final String PATH= "src/base"; 
 	
 	private static StudentFactory instance;
 	
 	private StudentFactory() {
 		
 	}
+	
 	
 	public static StudentFactory getInstance() {
 		if (null == instance) {
@@ -29,7 +36,7 @@ public class StudentFactory {
 	
 	public List<Student> getSFromFile() {
 		try {
-			return readFrom(new FileInputStream("src/base"));
+			return readFrom(new FileInputStream(PATH));
 		} catch (FileNotFoundException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
@@ -72,11 +79,32 @@ public class StudentFactory {
 		} catch (IOException e) {e.printStackTrace(); }
 		return result;
 	}
+
 	
-// http://codereview.stackexchange.com/questions/44135/is-it-ok-to-use-while-line-r-readline-null-construct
 	
-	
-	public void writeToFile () {
+	public void writeToFile (List<Student> studs) {
+		try {
+			RandomAccessFile raf = new RandomAccessFile(new File(PATH),"rw");
+			long offset = raf.length();
+			raf.seek(offset);
+			//raf.writeUTF("\n");
+			for (Student stud : studs) {
+				raf.writeUTF("\n"+stud.getFirstname()+" "+stud.getLastname());
+			}
+			raf.close();
+			
+			
+		} catch (FileNotFoundException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		} catch (IOException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
 		
+	}
+	
+	public void consoleToFile() {
+		writeToFile(getFromConsole());
 	}
 }
