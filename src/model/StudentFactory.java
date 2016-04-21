@@ -50,18 +50,15 @@ public class StudentFactory {
 			String line = null;
 			//for (String line = br.readLine(); line != null; line = br.readLine()) {
 			while (null != (line = br.readLine()) && line.length() > 0)  {
-			//while (true) {
-				//if (br.ready()) {
-				//String response =  br.readLine();
-				//if (response == null) {break;}
 				String[] indiv = line.split(" ");
 				Student stud = new Student();
 				stud.setFirstname(indiv[0]);
 				
 				String last="";
 				for (byte i = 1; i < indiv.length; i++) {
-					last += indiv[i];
+					last += indiv[i]+", ";
 				}
+				last = last.substring(0, last.length()-2);
 				stud.setLastname(last);
 				result.add(stud);
 				
